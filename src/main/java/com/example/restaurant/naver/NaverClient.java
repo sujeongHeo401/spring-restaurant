@@ -53,6 +53,7 @@ public class NaverClient {
                 responseType
         );
 
+//        return null;
         return responseEntity.getBody();
 
     }
