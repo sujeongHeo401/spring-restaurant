@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
+
+
 @SpringBootTest
 public class WishListServiceTest {
 
@@ -15,7 +18,7 @@ public class WishListServiceTest {
 
     @Test
     public void searchTest(){
-        
+        System.out.println("test");
         var search = new SearchLocalReq();
         search.setQuery("갈비집");
         var result = wishListService.search("갈비집");
