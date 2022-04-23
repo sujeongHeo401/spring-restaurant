@@ -97,4 +97,20 @@ public class WishListService {
                 .map(it -> entityToDto(it))
                 .collect(Collectors.toList());
     }
+
+    public void delete(int index) {
+        wishListRepository.deleteById(index);
+    }
+
+    public void addVisit(int index){
+        System.out.println("index + " + index);
+        var wishItem = wishListRepository.findById(index);
+        System.out.println("wishItem: " + wishItem);
+        if(wishItem.isPresent()){
+            var item = wishItem.get();
+            System.out.println("item : + " + item);
+            item.setVisit(true);
+            item.setVisitCount(item.getVisitCount()+1);
+        }
+    }
 }
